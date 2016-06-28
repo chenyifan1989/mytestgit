@@ -1,0 +1,9 @@
+###**一、RecycleView 分割线**###
+
+ListView中的分割线可以通过属性divider和dividerHeight分别设置颜色值/图片及分割线高度。而RecycleView并没有提供这两个属性设置分割线。
+作为ListView的升级版列表控件，当然也是支持分割线的设置的。RecycleView分割线需要通过addItemDecoration(ItemDecoration decor)设置;
+
+ItemDecoration有3个方法，ItemDecoration并没有对其实现，需要我们自己实现自定义的分割线；
+onDraw：其绘制将会在每个Item被绘制之前进行；
+onDrawOver:在绘制完Item后进行绘制；
+getItemOffsets:通过outRect.set()为每个item设置偏移量。
